@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 8rem;
+  padding: 0 10rem;
+  -webkit-box-shadow: 0.1rem 0.2rem 0.5rem #fff;
+          box-shadow: 0.1rem 0.2rem 0.5rem #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  -webkit-transition: all .5s ease;
+}
+
+nav .logo {
+  font-size: 3.5rem;
+  font-weight: 500;
+  color: #fff;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 1rem 3rem;
+  font-size: 1.6rem;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+nav ul li a:hover, nav ul li a.active {
+  background-color: #fff;
+  color: #1b1b1b;
+  border-radius: .5rem;
+}
+
+nav #check {
+  display: none;
+}
+
+.menu_btn i {
+  display: none;
+}
+
+nav.sticky {
+  padding: 0 10rem;
+  line-height: 8rem;
+  background-color: #fff;
+}
+
+nav.sticky .logo,
+nav.sticky ul li a {
+  color: #000;
+}
+
+nav.sticky ul li a:hover,
+nav.sticky ul li a.active {
+  background-color: #1b1b1b;
+  color: #fff;
+}
+
+nav.sticky .menu_btn i {
+  color: #000;
+}
+
+body {
+  min-height: 200vh;
+  background-color: gray;
+}
+
+.heroArea {
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.9)), to(rgba(0, 0, 0, 0.9))), url("../assets/banner.jpg") no-repeat;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("../assets/banner.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+
+.heroArea .heroWrapper {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.heroArea .heroWrapper .heroContent h1 {
+  font-size: 5rem;
+  color: #fff;
+}
+
+.heroArea .heroWrapper .heroContent h2 {
+  font-size: 4rem;
+  color: #fff;
+}
+
+@media (max-width: 1180px) {
+  nav.sticky {
+    padding: 0 5rem;
+    line-height: 8rem;
+    background-color: none;
+  }
+  nav.sticky .logo,
+  nav.sticky ul li a {
+    color: #000;
+  }
+  nav.sticky ul li a {
+    color: #fff;
+  }
+  nav.sticky .menu_btn i {
+    color: #000;
+    display: block;
+  }
+  nav {
+    padding: 0 5rem;
+  }
+  nav ul {
+    position: fixed;
+    top: 8rem;
+    left: -100%;
+    background: #111;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    display: block;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+  }
+  #check:checked ~ ul {
+    left: 0%;
+  }
+  .menu_btn i {
+    display: block;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+  }
+  #check:checked ~ .menu_btn i::before {
+    content: "\f00d";
+  }
+  nav ul li {
+    margin: 1.5rem 0;
+  }
+  nav ul li a {
+    display: block;
+    font-size: 2rem;
+    -webkit-transition: all 3s ease;
+    transition: all 3s ease;
+  }
+  nav ul li a:hover,
+  nav ul li a.active {
+    background: none;
+    color: cyan;
+  }
+}
+
+@media (max-width: 940px) {
+  .heroArea .heroWrapper .heroContent h1 {
+    font-size: 4rem;
+    color: #17a2b8;
+    margin-bottom: 1rem;
+  }
+  .heroArea .heroWrapper .heroContent h2 {
+    font-size: 3rem;
+    color: #17a2b8;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroArea .heroWrapper .heroContent h1 {
+    font-size: 3rem;
+    color: #dc3545;
+  }
+  .heroArea .heroWrapper .heroContent h2 {
+    font-size: 2rem;
+    color: #dc3545;
+  }
+}
+/*# sourceMappingURL=style.css.map */

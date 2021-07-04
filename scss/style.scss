@@ -1,0 +1,211 @@
+// google fonts link
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+}
+html{
+    font-size: 62.5%;
+}
+$bgColor:#1b1b1b;
+$textColor:#fff;
+$subBgColor:#111;
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height:8rem;
+    padding: 0 10rem;
+    box-shadow: .1rem .2rem .5rem $textColor;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+    -webkit-transition: all .5s ease;
+    & .logo{
+        font-size: 3.5rem;
+        font-weight: 500;
+        color: $textColor;
+        transition: all .5s ease;
+    }
+    ul{
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        li{
+            margin: 0 1rem;
+            a{
+                text-decoration: none;
+                color: $textColor;
+                padding: 1rem 3rem;
+                font-size: 1.6rem;
+                transition: all .5s ease;
+                &:hover,
+                &.active{
+                    background-color: $textColor;
+                    color: $bgColor;
+                    border-radius: .5rem;
+                }
+            }
+        }
+    }
+    #check{
+        display: none;
+    }
+}
+
+    .menu_btn i{
+        display: none;
+    }
+nav.sticky {
+    padding: 0 10rem;
+    line-height: 8rem;
+    background-color: #fff;
+}
+nav.sticky .logo,
+nav.sticky ul li a {
+    color: #000;
+}
+nav.sticky ul li a:hover,
+nav.sticky ul li a.active {
+    background-color: #1b1b1b;
+    color: #fff;
+}
+nav.sticky .menu_btn i{
+    color: #000;
+}
+
+body{
+    min-height: 200vh;
+    background-color: gray;
+}
+.heroArea{
+    background:linear-gradient(to right, rgba(0,0,0,0.9),rgba(0,0,0,0.9)), url("../assets/banner.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    //heroWrapper
+    .heroWrapper{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        .heroContent{
+            h1{
+                font-size: 5rem;
+                color: #fff;
+            }
+            h2{
+                font-size: 4rem;
+                color: #fff;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// responsive scss
+@media (max-width: 1180px) {
+    nav.sticky{
+        padding: 0 5rem;
+        line-height: 8rem;
+        background-color: none;
+    }
+    nav.sticky .logo,
+    nav.sticky ul li a {
+        color: #000;
+    }
+
+    nav.sticky ul li a{
+        color: #fff;
+    }
+
+    nav.sticky .menu_btn i {
+        color: #000;
+        display: block;
+    }
+    nav{
+        padding: 0 5rem;
+    }
+    nav ul{
+        position: fixed;
+        top: 8rem;
+        left: -100%;
+        background: #111;
+        text-align: center;
+        width: 100%;
+        height: 100vh;
+        display: block;
+        transition: all .5s ease;
+    }
+    #check:checked ~ ul{
+        left: 0%;
+    }
+    .menu_btn i {
+        display: block;
+        font-size: 2rem;
+        color: $textColor;
+        cursor: pointer;
+    }
+
+    #check:checked ~ .menu_btn i::before {
+        content: "\f00d";
+    }
+    nav ul li {
+        margin: 1.5rem 0;
+    }
+    nav ul li a{
+        display: block;
+        font-size: 2rem;
+        transition: all 3s ease;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+        background: none;
+        color: cyan;
+    }
+}
+
+@media (max-width: 940px) {
+
+    // .heroArea  
+    .heroArea .heroWrapper .heroContent h1 {
+        font-size: 4rem;
+        color: #17a2b8;
+        margin-bottom: 1rem;
+    } 
+    .heroArea .heroWrapper .heroContent h2 {
+        font-size: 3rem;
+        color: #17a2b8;
+    }
+}
+
+@media (max-width: 768px) {
+    .heroArea .heroWrapper .heroContent h1 {
+        font-size: 3rem;
+        color: #dc3545;
+    } 
+    .heroArea .heroWrapper .heroContent h2 {
+        font-size: 2rem;
+        color: #dc3545;
+    }
+}
